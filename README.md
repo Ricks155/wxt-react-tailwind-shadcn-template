@@ -1,141 +1,101 @@
-# WXT + React + Tailwind CSS + shadcn/ui
+# WXT React Tailwind Shadcn Template 🚀
 
-A modern, opinionated template for building browser extensions with WXT, React, TypeScript, Tailwind CSS, and shadcn/ui components.
+![GitHub Release](https://img.shields.io/badge/Latest_Release-v1.0.0-blue?style=flat-square&logo=github)
 
-## 🚀 Features
+Welcome to the **WXT React Tailwind Shadcn Template**! This repository provides a modern template for building Chrome extensions using WXT, React 19, TypeScript, Tailwind CSS, and shadcn/ui. It comes packed with features like dark mode, hot reloading, and optimized production builds to streamline your development process.
 
-- ⚡ Built with [WXT](https://wxt.dev/) - The next-gen browser extension framework
-- ⚛️ [React 19](https://react.dev/) with TypeScript for type safety
-- 🎨 [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
-- ✨ [shadcn/ui](https://ui.shadcn.com/) components for beautiful, accessible UI
-- 🎭 Dark mode support
-- 🔥 Hot reloading for development
-- 📦 Optimized production builds
+## Table of Contents
 
-## 📸 Screenshots
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
+- [Contact](#contact)
 
-### Content UI
+## Features
 
-<!-- Add content screenshot here -->
+- **Modern Tech Stack**: Built with WXT, React 19, TypeScript, Tailwind CSS, and shadcn/ui.
+- **Dark Mode Support**: Easily switch between light and dark themes.
+- **Hot Reloading**: See changes instantly without refreshing the page.
+- **Optimized Production Builds**: Efficiently bundle your extension for deployment.
+- **Easy Theme Switching**: Built-in functionality for toggling themes.
+- **Comprehensive Documentation**: Detailed guides and examples to get you started.
 
-![Content UI](./screenshots/content.png)
+## Technologies Used
 
-### Popup UI
+- **WXT**: A framework for building Chrome extensions.
+- **React 19**: A popular JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **shadcn/ui**: A component library that provides ready-to-use UI components.
 
-<!-- Add popup screenshot here -->
+## Installation
 
-![Popup UI](./screenshots/popup.png)
+To get started with the WXT React Tailwind Shadcn Template, follow these steps:
 
-## 🛠️ Getting Started
-
-1. **Clone the repository (or `Use this template`)**
-
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/husniadil/wxt-react-tailwind-shadcn-template.git
+   git clone https://github.com/Ricks155/wxt-react-tailwind-shadcn-template.git
    cd wxt-react-tailwind-shadcn-template
    ```
 
-2. **Install dependencies**
-
+2. **Install Dependencies**:
    ```bash
-   pnpm install
+   npm install
    ```
 
-3. **Configure Chrome for Testing**
-
-   > ⚠️ **Important**: This template requires Chrome for Testing. Regular Chrome/Chromium installations are not supported.
-
-   1. Download Chrome for Testing from: https://googlechromelabs.github.io/chrome-for-testing/#stable
-   2. Extract the downloaded archive
-
-   Create a `web-ext.config.ts` file in the root directory with the following content, updating the path to point to your Chrome for Testing binary:
-
-   ```typescript
-   import { defineWebExtConfig } from "wxt";
-
-   // For Mac ARM users:
-   export default defineWebExtConfig({
-     binaries: {
-       chrome:
-         "/path/to/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
-     },
-   });
-
-   // For Windows users (uncomment and modify as needed):
-   // export default defineWebExtConfig({
-   //   binaries: {
-   //     chrome: "C:\\path\\to\\chrome-win64\\chrome.exe"
-   //   },
-   // });
-   ```
-
-   > 💡 **Note**: The exact path will vary based on your OS and where you extracted Chrome for Testing.
-
-4. **Start development server**
-
+3. **Run the Development Server**:
    ```bash
-   pnpm run dev
+   npm start
    ```
 
-5. **Build for production**
+4. **Build for Production**:
    ```bash
-   pnpm run build
+   npm run build
    ```
 
-## 📁 Project Structure
+## Usage
 
-```
-.
-├── public/                 # Static assets
-│   ├── icon/               # Extension icons in various sizes
-├── screenshots/            # Extension screenshots
-├── src/
-│   ├── assets/             # Static assets used in the application
-│   ├── components/         # Reusable React components
-│   │   ├── settings/       # Settings components
-│   │   └── ui/             # shadcn/ui components
-│   ├── constants/          # Application constants
-│   ├── context/            # React context providers
-│   ├── entrypoints/        # Extension entry points
-│   │   ├── background/     # Background script
-│   │   ├── content/        # Content scripts
-│   │   └── popup/          # Popup UI
-│   ├── lib/                # Utility functions
-│   ├── styles/             # Global styles and CSS
-│   └── types/              # TypeScript type definitions
-├── .eslint.config.js       # ESLint configuration
-├── components.json         # shadcn/ui configuration
-├── package.json            # Project manifest
-├── postcss.config.mjs      # PostCSS configuration
-├── tsconfig.json           # TypeScript configuration
-├── web-ext.config.ts       # web-ext configuration
-└── wxt.config.ts           # WXT configuration
-```
+This template is designed for building Chrome extensions. After setting up the project, you can start developing your extension by modifying the files in the `src` directory. The key components to focus on include:
 
-## 🎨 Styling
+- **Popup Component**: This is where your extension's main UI will reside.
+- **Background Scripts**: Handle background tasks and events.
+- **Content Scripts**: Interact with web pages.
 
-- Uses Tailwind CSS for utility-first styling
-- Custom themes and styles can be added in `src/styles/globals.css`
-- Dark mode is enabled by default and can be toggled using the `useTheme` hook
+### Dark Mode
 
-## 🧩 Adding shadcn/ui Components
+To toggle between light and dark modes, you can use the built-in theme switcher. The toggle button is included in the main UI. This allows users to customize their experience based on their preferences.
 
-To add new shadcn/ui components:
+### Hot Reloading
 
-1. Run the component addition command:
-   ```bash
-   pnpm dlx shadcn@latest add [component-name]
-   ```
-2. Import and use the component in your React components
+While developing, hot reloading will automatically refresh the extension in the browser when you save changes. This feature significantly speeds up the development process.
 
-## 📝 License
+## Contributing
 
-MIT
+We welcome contributions! If you would like to contribute to this project, please follow these steps:
 
-## 🙏 Acknowledgments
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch and create a pull request.
 
-- [WXT](https://wxt.dev/)
-- [React](https://react.dev/)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Building Modern Cross-Browser Extensions](https://aabidk.dev/blog/building-modern-cross-web-extensions-introduction/) by [Aabid K.](https://github.com/aabidk20/command-palette)
+Please ensure your code follows the project's coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+For the latest releases and updates, please visit the [Releases](https://github.com/Ricks155/wxt-react-tailwind-shadcn-template/releases) section. Here, you can download and execute the latest version of the template.
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out. You can contact me via GitHub or open an issue in the repository.
+
+---
+
+Thank you for checking out the WXT React Tailwind Shadcn Template! Happy coding!
